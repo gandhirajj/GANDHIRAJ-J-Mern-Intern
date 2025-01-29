@@ -1,0 +1,54 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    margin: 0;
+   font-family: Courier, monospace; 
+   padding: 0;
+   font-weight: 600;
+  }
+  
+  .container {
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .title {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #f6f2f2;
+  }
+  
+  /* Grid Layout */
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  
+  /* Project Card Styles */
+  .card {
+    background: linear-gradient(135deg,  #eee9e9, #58a2df);
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+    overflow: hidden;
+    position: relative;
+  }
+  
+  /* Hover Effect: Change Background to Blue */
+  .card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    background: linear-gradient(135deg, #4b85c3, #0056b3); /* Blue gradient */
+    color: white; /* Change text color to white for better contrast */
+  }
+  
+ 
+
+
+  
+ 
