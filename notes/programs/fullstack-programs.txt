@@ -1,0 +1,986 @@
+import logo from './logo.svg';
+import './App.css';
+import { Rough } from "./rough.js";
+import { Parent } from "./parent.js";
+import { Home } from "./home.js";
+import { Abouts } from './abouts.js';
+import { Contact } from "./contact.js";
+import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
+import Counter from './counter.js';
+import About from "./about.js";
+import{ Child} from "./child.js";
+import{ Child1} from "./child1.js";
+import{ Parent1} from "./parent1.js";
+import { Grandparent } from './grandparent.js';
+import ShoppingCart from "./cart.js";
+import {Useeffect} from "./useeffect.js";
+ function App() {
+   return (
+    //  <Router>
+    //    <div>
+    //      <nav>
+    //        <ul>
+            
+    //          <li>
+    //            <Link to="/">Home</Link>
+    //          </li>
+    //          <li>
+    //            <Link to="/abouts">Abouts</Link>
+    //          </li>
+    //          <li>
+    //            <Link to="/contact">Contact</Link>
+    //          </li>
+    //        </ul>
+    //      </nav>
+    //      <Routes>
+    //        {/* Correct usage of element in Route for React Router v6 */}
+    //        <Route path="/" element={<Home />} />
+    //        <Route path="/abouts" element={<Abouts />} />
+    //        <Route path="/contact" element={<Contact />} />
+    //      </Routes>
+    //    </div>
+    // </Router>
+   <div>
+      <About />
+    </div>
+   )}
+   export default App;
+  //   <div>
+  //     <ShoppingCart />
+  //   </div>
+  //  );
+  // }
+  // export default App;
+// function App() {
+//   return (
+//     <div>
+// <Grandparent />
+
+//     </div>
+//   );
+// }
+// export default App;
+
+/*
+import React, { useState} from 'react';
+const App = () => {
+  const [message,setmessage]=useState("click the button");
+  const handleClick =()=>{
+    setmessage('hello');
+  };
+
+  return (
+    <div>
+      <h1> {message}</h1>
+      <button onClick={handleClick}>Click me</button>
+      
+    </div>
+  );
+};
+
+export default App;*/
+
+/*<div>
+    <Useeffect />
+      </div>
+  );
+ }
+ export default App;*/
+========================================================================================================
+// import React from 'react'
+
+// export const cart = () => {
+//     const[product,addpro]=useState("");
+//     const addproduct =()=>{
+//         product(addpro);
+//     }
+//   return (
+//     <div>
+//         <P>SHOPPING CART</P>
+//         <h1 id= "pro1" >Laptop</h1>
+//         <button onClick={handleLaptopClick}>Add to Cart</button>
+//         <h1 id= "pro2" >Phone</h1>
+//         <button onClick={handlePhoneClick}>Add to Cart</button>
+//         <h1 id= "pro3" >Headphone</h1>
+//         <button onClick={handleHeadphoneClick}>Add to Cart</button>
+//     </div>
+//   )
+// }
+import React, { useState } from "react";
+
+const ShoppingCart = () => {
+  const [cartItems, setCartItems] = useState([]); 
+ 
+  const products = [
+    { id: 1, name: "Laptop", price: 1000 },
+    { id: 2, name: "Phone", price: 500 },
+    { id: 3, name: "Headphone", price: 200 },
+  ];
+
+  const addToCart = (product) => {
+    const itemWithUniqueId = {
+      ...product,
+      uniqueId: Date.now() + Math.random(), 
+    };
+    setCartItems((prevItems) => [...prevItems, itemWithUniqueId]);
+  };
+
+  const removeFromCart = (uniqueId) => {
+    setCartItems((prevItems) => prevItems.filter((item) => item.uniqueId !== uniqueId));
+  };
+
+  return (
+    <div>
+ <h1>Shopping Cart</h1>
+        {cartItems.map((item) => (
+          <div key={item.id}>
+            <h2>{item.name}</h2>
+            <p>Price: Rs.{item.price}</p>
+            <div class="center">
+            <button onClick={() => removeFromCart(item.uniqueId)}>Remove</button>
+          </div>
+          </div>
+        ))}
+
+      <h1>Product List</h1>
+      {products.map((product) => (
+        <div key={product.id}>
+          <h2>{product.name}</h2>
+          <p>Price: Rs.{product.price}</p>
+          <div class="center">
+          <button onClick={() => addToCart(product)}>Add to Cart</button>
+          </div>
+        </div>
+      ))}
+
+
+    </div>
+  );
+};
+
+export default ShoppingCart;
+import React from 'react'
+
+
+// export const Child = (props) => {
+//   return (
+//     <div>
+//     <h1>This is Child Component</h1>
+//     <p>message:{props.message}</p>
+        
+//     </div>
+//   )
+// }
+/*COMBAI OF TWO ARRAY IN NORMAL JS*/
+export const Child = () => {
+  var arr1 = [1, 2, 3];
+  var arr2 = [4, 5, 6];
+
+  const combine = () => {
+    document.getElementById("res").innerHTML = arr1.concat(arr2).join(", ");
+  };
+
+  return (
+    <div>
+      <h1>Array 1: {arr1.join(", ")}</h1>
+      <h1>Array 2: {arr2.join(", ")}</h1>
+      <h1 id="res"></h1>
+      <button onClick={combine}>Combine</button>
+    </div>
+  );
+};
+
+
+
+/*USING IN REACT COMBAIN OF TWO ARRAY*/
+// import React, { useState} from 'react';
+// export const Child = () => {
+//   const one=[1,2,3]
+//   const two=[10,11,12]
+//   const [final,setfinal]=useState([])
+//   return (
+//     <div className="cbn">
+//       <h1>one:[{one.join(",")}]</h1>
+//       <h1>two:[{two.join(",")}]</h1>
+//       <h2> final:[{final}]</h2>
+//     <button className="cbn" onClick={()=>setfinal(one.concat(two).join(","))}>click me</button>
+
+//     </div>
+//   )
+// }
+/*my code*/
+
+// import React, { useState } from "react";
+
+// export const Child1 = ({ parentData, sendDataToParent }) => {
+//   const [childData, setChildData] = useState("");
+  
+
+//   const handleSendData = () => {
+//     setChildData("Hello from Child");
+//     sendDataToParent("Hello from Child"); 
+//   };
+
+//   return (
+//     <div>
+//       <h1>This the child component</h1>
+//       <p>Data from parent: {parentData }</p>
+//       <p>Data from Child: {childData}</p>
+//       <button onClick={handleSendData}>Send Data to Parent</button>
+//     </div>
+//   );
+// };
+
+import React, { useState } from "react";
+
+export const Child1 = (props) => {
+  const [childMessage, setChildMessage] = useState("Hello from Child");
+
+  const sendMessageToParent = () => {
+    props.dataToParent(childMessage);
+  };
+
+  return (
+    <div>
+      <h1>Child Component</h1>
+      <p>Data from Parent: {props.msgFromParent}</p>
+      <p>Data from Grandparent: {props.msgFromGrandparent}</p>
+      <button onClick={sendMessageToParent}>Send Data to Parent</button>
+    </div>
+  );
+};
+ import React from 'react'
+
+export const Contact = () => {
+  return (
+    <div>
+        <h1>contact</h1>
+            <p>M.S. Dhoni (born July 7, 1981, Ranchi, Bihar [now Jharkhand] state, India) is an Indian cricketer whose rise to prominence in the early 21st century culminated in his captaincy of the Indian national team that won the one-day Cricket World Cup in 2011.
+
+Dhoni made his international debut in 2004. His talent with the bat came to the fore in an innings of 148 runs against Pakistan in his fifth international match. Within a year he joined the India Test team, where he quickly established himself with a century (100 or more runs in a single innings) against Pakistan. Despite his inexperience, Dhoni took over the captaincy of the one-day side in 2007 and led India to the Twenty20 (T20) world title. Series wins over Australia and Sri Lanka, among others, moved India to the top of the International Cricket Council (ICC) Test rankings for the first time in December 2009. Dhoni was honoured for his play with the ICC One Day International Player of the Year Award in 2008 and 2009. In the 2011 one-day World Cup, Dhoni’s dashing innings of 91 not out—in front of a home crowd in Mumbai—paved the way for India’s victory over Sri Lanka in the final. He also led India to an appearance in the semifinals of the 2015 Cricket World Cup. Dhoni stopped serving as India’s captain in 2017, having led his country in 331 international matches, the most for a captain in the sport’s history. Three years later he retired from international competition.</p>
+    </div>
+  )
+}
+
+
+// import React,{useState} from 'react'
+
+// function Counter(){
+//     const [count,setCount] = useState(0);
+
+//  const increment = () => {
+//     setCount(count-1);
+// };
+//   return (
+//     <div>
+//         <h1>Counter:{count}</h1>
+//         <button onClick={increment}>Increment</button>
+        
+//         </div>
+//   );
+// }
+// export default Counter
+import React, { useState } from 'react';
+
+function Counter() {
+  const [count, setCount] = useState(0);
+
+  const increment = () => {
+    setCount(count + 1);
+  };
+
+  const decrement = () => {
+    setCount(count - 1);
+  };
+
+  return (
+    <div>
+      <h1>Counter: {count}</h1>
+      <button onClick={increment}>Increment</button>
+      <button onClick={decrement}>Decrement</button>
+    </div>
+  );
+}
+
+export default Counter;
+import React, { useState } from "react";
+import { Parent1 } from "./parent1";
+
+export const Grandparent = () => {
+  const [grandparentMessage, setGrandparentMessage] = useState("Hello from Grandparent");
+  const [childMessage, setChildMessage] = useState("");
+  const [parentMessage, setParentMessage] = useState("");
+
+  const sendDataToParent = (message) => {
+    setParentMessage(message); // Update message received from Grandparent to Parent
+  };
+
+  const sendDataToChild = () => {
+    setChildMessage("Message from Grandparent to Child");
+  };
+
+  const receiveDataFromParent = (message) => {
+    setParentMessage(message); // Update message received from Parent
+  };
+
+  return (
+    <div>
+      <h1>Grandparent Component</h1>
+      <p>Data from Parent: {parentMessage}</p>
+      <p>Data from Child: {childMessage}</p>
+      <button onClick={sendDataToChild}>Send Message to Parent and Child</button>
+      <Parent1
+        msgFromGrandparent={grandparentMessage}
+        sendDataToGrandparent={receiveDataFromParent}
+      />
+    </div>
+  );
+};
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import './index.css';
+import App from './App';
+import reportWebVitals from './reportWebVitals';
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>
+);
+
+// If you want to start measuring performance in your app, pass a function
+// to log results (for example: reportWebVitals(console.log))
+// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
+reportWebVitals();
+
+import React from 'react'
+
+export const Rough = (props) => {
+  return (
+    <div>
+        {/* <p>good morning to all ........{props.fname}{props.lname}{props.age}</p> */}
+        {/* <p>Product name:{props.name} </p>
+        <p>Product id:{props.id}</p>
+        <p>product price:{props.price}</p>
+        <p>product discount:{props.discount}</p> */}
+        <p>name:{props.name}</p>
+        <p>age:{props.age}</p>
+    </div>
+  )
+}
+
+
+import React, { useState, useEffect } from 'react';
+
+export const Useeffect = () => {
+    const TimerComponent = () => {
+        const [seconds, setSeconds] = useState(0);
+
+        useEffect(() => {
+            const interval = setInterval(() => {
+                setSeconds(prevSeconds => prevSeconds + 1);
+            }, 500);
+            
+            return () => clearInterval(interval);
+        }, []);
+
+        return (
+            <div>
+                <h2>Timer:</h2>
+                <p>{seconds} seconds are passing</p>
+            </div>
+        );
+    };
+
+    return (
+        <div>
+            <TimerComponent />
+        </div>
+    );
+};
+import logo from './logo.svg';
+import './App.css';
+import {Container} from './container.js';
+import {Clock} from './clock';
+import {UseEffectone} from './useEffectone.js';
+import { UseReducerone } from './useReducerone.js';
+import {Style} from './style.js';
+import {Password} from './password.js';
+import {Form} from './form.js'
+// function App() {
+//   return (
+//     <div className="App">
+//       <header className="App-header">
+//         <img src={logo} className="App-logo" alt="logo" />
+//         <p>
+//           Edit <code>src/App.js</code> and save to reload.
+//         </p>
+//         <a
+//           className="App-link"
+//           href="https://reactjs.org"
+//           target="_blank"
+//           rel="noopener noreferrer"
+//         >
+//           Learn React
+//         </a>
+//       </header>
+//     </div>
+//   );
+// }
+
+// export default App;
+
+
+// const App = () => {
+//   return (
+//     <div>
+//       <C1 />
+//     </div>
+//   );
+// };
+
+// export default App;
+// const App = () => {
+//   const [theme,setTheme] = useState("light");
+//   const toggleTheme = ()=>{
+//     setTheme((curr)=>(curr ==="light"?"dark":"light"))
+//   }
+//   return (
+//     <div style={{ background: theme === "light" ? "#fff" : "#333", color: theme === "light" ? "#000" : "#fff" }}>
+//       <h1>app component</h1>
+//       <Container theme={theme} />
+//       <button onClick={toggleTheme}>change theme</button>
+//     </div>
+//   );
+// };
+
+// export default App;
+// import {createContext, useState} from 'react'
+// export const themeContext= createContext();
+// function App() {
+    
+//  const [theme,setTheme]=useState('light');
+//  const [style,setstyle]=useState({backgroundColor :'orange',color:'black'});
+//  function toggleTheme(){
+
+//    setTheme(theme ==='light'?'dark':'light')
+//  }
+//  return (
+//   <themeContext.Provider value={{theme,style}}>
+//      <div >
+//             <h1 style={style} >App Component</h1>
+//            <h1>current theme : {theme}</h1>
+//            <button onClick={toggleTheme}>change theme</button>
+ 
+//        <Container />
+//      </div>
+//      </themeContext.Provider>
+//    )
+//  }
+//  export default App
+// function App(){
+//   return(
+//     <div>
+//       {/* <Clock /> */}
+//       {/* <UseEffectone /> */}
+//       <UseReducerone/>
+//     </div>
+//   );
+// }
+// export default App
+
+// function App(){
+//   return (
+//     <div>
+//     <div className="hello">
+//       <h1>MY APP</h1>
+//       <h3>second line</h3>
+// </div >
+// <div id='d'>
+//       <h1>MY APP</h1>
+//       <h3>second line</h3>
+//       </div>
+//       <div id="h">
+//         <p> stylecomponent</p>
+     
+//         </div>
+//     <div>
+//       <Style />
+//     </div>
+//     <div>
+//       <Password />
+//       <Form />
+//     </div>
+//     </div>
+    
+//   )
+// }
+// export default App
+
+import React from 'react';
+import {C2} from './c2';
+
+export const C1 = () => {
+  var msg ='helloooo';
+  console.log(msg);
+  return (
+    <div>
+      <h1>hello i am c1 </h1>
+      <h1>msg={msg}</h1>
+      <C2   />
+    </div>
+  );
+};
+import React from 'react';
+import {C3}from './c3';
+
+export const C2 = ({msg}) => {
+  return (
+    <div>
+      <h2>hello i am c2 </h2>
+      <C3 msg={msg} />
+    </div>
+  );
+};
+import React from 'react';
+import {C4} from './c4';
+
+export const C3 = ({msg}) => {
+  return (
+    <div>
+      <h3>hello i am c3 </h3>
+      <C4 msg={msg}/>
+    </div>
+  );
+};
+
+
+import React from 'react' 
+import { useState } from 'react';
+import { useEffect } from 'react';
+
+export const Clock = () => {
+  const [count, setCount] = useState(0);
+
+  const increment = () => {
+    setCount(count + 1);
+  };
+
+  const decrement = () => {
+    setCount(count - 1);
+  };
+
+  return (
+    <div>
+      <h1>Count: {count}</h1>
+      <button onClick={increment}>+</button>
+      <button onClick={decrement}>-</button>
+      <h1>Clock</h1>
+    </div>
+  );
+};
+// export const Clock = () => {
+
+//     const [start,update] = useState(0);
+//     return(
+//         <div>
+//             <h1>start :{start}</h1>
+//             <button onClick={()=>update(start+1)}>+</button>
+//             <button onClick={()=>update(start-1)}>-</button>
+//         </div>
+//     );
+// };
+
+
+import React from 'react'
+import {Users} from './users.js'
+export const Container = () => {
+  return (
+    <div><h1>container</h1>
+    < Users />
+    </div>
+  )
+}
+
+import React,{ useState} from 'react'
+
+export const Form = () => {
+    const [name, updatename]=useState('');
+    function handlechange(event){
+        updatename(event.target.value);
+    }
+  return (
+    <div>
+        <form>
+            <label>name</label>
+            <input type="text" placeholder="Enter your name" value={name} onChange={handlechange} ></input>
+            <h2> your name is :{name}</h2>
+            </form>
+        </div>
+  )
+}
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import './index.css';
+import App from './App';
+import reportWebVitals from './reportWebVitals';
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>
+);
+
+// If you want to start measuring performance in your app, pass a function
+// to log results (for example: reportWebVitals(console.log))
+// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
+reportWebVitals();
+
+
+import React, { useState } from 'react';
+
+export const Password = () => {
+    const [isSame, setisSame] = useState(null);
+    const password = "abc123";
+
+    const handleCheckPassword = () => {
+        const input = prompt("Enter the password");
+        if (input === password) {
+            setisSame(true);
+        } else {
+            setisSame(false); 
+        }
+    };
+
+    return (
+        <div>
+            <button onClick={handleCheckPassword}>Enter Password</button>
+  
+        </div>
+    );
+}
+
+import React from 'react'
+import './style.css';
+
+export const Style = () => {
+  return (
+    <div className='style'>
+        <h1>
+            StyleComponent
+        </h1>
+
+    </div>
+  )
+}
+
+import logo from './logo.svg';
+import './App.css';
+import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
+import Home from './home.js'
+import {About} from './about.js'
+import {Users} from './users.js'
+import {Contact} from './contact.js'
+import {Bootstrap} from './bootstrap.js'
+
+// function App() {
+//   return (
+//     <div className="App">
+//       <header className="App-header">
+//         <img src={logo} className="App-logo" alt="logo" />
+//         <p>
+//           Edit <code>src/App.js</code> and save to reload.
+//         </p>
+//         <a
+//           className="App-link"
+//           href="https://reactjs.org"
+//           target="_blank"
+//           rel="noopener noreferrer"
+//         >
+//           Learn React
+//         </a>
+//       </header>
+//     </div>
+//   );
+// }
+
+// export default App;
+
+
+
+// function App() {
+//   return (
+//     <Router>
+//       <div>
+//         <nav class='nav-bar'>
+//           <div class='style'>
+//             <span>
+//               <Link to="/">Home</Link>
+//             </span>
+//             <span>
+//               <Link to="/users">Users</Link>
+//             </span>
+//             <span>
+//               <Link to="/about">About</Link>
+//             </span>
+//             <span>
+//               <Link to="/contact">Contact</Link>
+//             </span>
+          
+//           </div>
+//         </nav>
+
+//         <Routes>
+//           <Route path="/" element={<Home />} />
+//           <Route path="/about" element={<About />} />
+//           <Route path="/contact" element={<Contact />} />
+//           <Route path="/users" element={<Users />} />
+//         </Routes>
+//       </div>
+//     </Router>
+//   );
+// }
+
+
+// export default App;
+function App(){
+  return(
+      <div>
+         <Bootstrap />  
+      </div>
+  )
+}
+export default App
+
+import {configureStore} from '@reduxjs/toolkit';
+import userReducer from '../slices/userslice';
+
+const store=configureStore({
+    reducer:{
+        userinfo:userReducer,
+    }
+});
+export default store;
+
+import React, {useState} from 'react';
+
+import { useDispatch } from 'react-redux';
+import {addUser} from './slices/userslice'
+function Home(){
+  const [formdata,setformdata]=useState({
+      name:"",
+      age:""
+  });
+  function handlechange(event) {
+      const { name, value } = event.target;
+      setformdata((curr) => {
+        return {
+          ...curr,
+          [name]: value
+        };
+      });
+    }
+    
+console.log(formdata)
+  
+return (
+  <div>
+      <h1>Home
+          </h1>
+          <form>
+              <label>name:</label>
+              <br/>
+              <input name="name" type="text" value={formdata.name} onChange={handlechange} /> 
+              <br />
+              
+              <label>age:</label>
+              <br/>
+              <input name="age" type="number" value={formdata.age} onChange={handlechange} />
+              <br />
+              <button>ADD</button>
+
+          </form>
+      </div>
+)
+}
+export default Home;
+
+
+// import {Button} from 'react-bootstrap';
+// import 'bootstrap/dist/css/bootstrap.min.css';
+// import {Alert} from 'react-bootstrap'
+// export const Bootstrap = () => {
+//   return (
+//     <div>
+//       <Alert> I am alert </Alert>
+//       <Alert varient='primary'>I am alert</Alert>
+//       <Alert varient='secondary'>I am alert</Alert>
+//       <Alert varient='success'>I am alert</Alert>
+//         <Button> button from bootstrap</Button>
+//     </div>
+//   )
+// }
+
+import React from 'react';
+
+import { Button } from 'react-bootstrap';
+import 'bootstrap/dist/css/bootstrap.min.css'
+import { Alert,Breadcrumb,Card } from 'react-bootstrap';
+
+
+export const Bootstrap = () => {
+  return (
+    <div >
+
+      <Alert>I am Alert</Alert>
+      <Alert variant='primary'>I am Alert</Alert>
+      <Alert variant='secondary'>I am Alert</Alert>
+      <Alert variant='success'>I am Alert</Alert>
+      <Breadcrumb.Item active>Home</Breadcrumb.Item>
+      <Breadcrumb>About</Breadcrumb>
+      <Breadcrumb>Contact</Breadcrumb>
+      <Button>Button from bootstrap</Button>
+
+      <Card style={{background:"gold-yellow"}}>
+        <Card.Title>
+          Title:card
+        </Card.Title>
+        <Card.Text>
+          THIS IS REACT-BOOTSTRAP CARD
+        </Card.Text>
+          <button
+          type="botton"
+          class="btn btn-primary btn-xl btn-block"
+          data-toggle="button"
+          aria-pressed="false"
+          aria-autocomplete='off'
+          disabled ></button>
+          
+      </Card>
+    </div>
+  );
+}
+import logo from './logo.svg';
+import './App.css';
+import {useState} from 'react'
+import {BrowserRouter, Routes,Route} from 'react-router-dom'
+import { Link } from 'react-router-dom';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import User from './user.js';
+import Updateuser from './updateuser.js';
+import Createuser from './createuser.js';
+
+function App() {
+  const[count,setCount] = useState(0)
+  return (
+    <div className="App">
+      <BrowserRouter>
+     
+      <nav>
+          <ul>
+            
+             <li>
+              <Link to="/">User</Link>
+              </li>
+           <li>
+                <Link to="/create">Createuser</Link>
+             </li>
+             <li>
+               <Link to="/update">Updateuser</Link>
+            </li>
+          </ul>
+          </nav>
+          <Routes>
+        <Route path='/' element={<User />}></Route>
+        <Route path='/create' element={<Createuser />}></Route>
+        <Route path='/update' element={<Updateuser />}></Route>
+      </Routes>
+      </BrowserRouter>
+      
+    </div>
+  );
+}
+
+export default App;
+import React,{useState} from 'react'
+import axios from 'axios';
+ const Createuser = () => {
+    const[name,setname]=useState()
+    const[age,setage]=useState()
+    const[email,setemail]=useState()
+    const submit =(e)=>{
+
+        e.preventDefault();
+        axios.post("http://localhost:3001/createuser",{name,age,email})
+        .then(result =>console.log(result))
+        .catch(err => console.log(err))
+    }
+  return (
+    <div>
+      <h1> Createuser</h1>
+      <form>
+        <label> Name: </label> <input type="text"onChange={(e)=>setname(e.target.value)} /><br></br>
+        <label>age:</label> <input type="number" onChange={(e)=>setage(e.target.value)} />
+        <label>Email: </label> <input  onChange={(e)=>setemail(e.target.value)} /> 
+        <button onClick={submit}> Submit </button>
+      </form>
+      <h1>Name:{name}</h1>
+      <h1>Age:{age}</h1>
+      <h1>Email:{email}</h1>
+    </div>
+  )
+}
+export default Createuser;
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import './index.css';
+import App from './App';
+import reportWebVitals from './reportWebVitals';
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>
+);
+
+// If you want to start measuring performance in your app, pass a function
+// to log results (for example: reportWebVitals(console.log))
+// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
+reportWebVitals();
+import React from 'react'
+
+ const Updateuser = () => {
+  return (
+    <div>updateuse</div>
+  )
+}
+export default Updateuser;
+
+const express = require('express');
+const mongoose = require('mongoose');
+const cors = require('cors');
+const UserModel = require('./models/Users');
+const port = 3001;
+
+const app = express();
+app.use(cors());
+app.use(express.json());
+
+app.get('/', (req, res) => {
+  res.send('hello this is data from server');
+});
+
+mongoose.connect('mongodb://127.0.0.1:27017/Crud'); // crud is database name 
+
+app.post('/createuser', (req, res) => {
+  UserModel.create(req.body)
+    .then(users => res.json(users))
+    .catch(err => res.json(err))
+})
+
+app.listen(port, () => {
+  console.log(`Server is running on port http://localhost:${port}`);
+});
