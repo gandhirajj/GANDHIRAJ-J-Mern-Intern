@@ -1,0 +1,804 @@
+=========================================================================================================================================================
+DAY 1:
+
+emoj shortcut windows+:
+es 6 js ecma script
+arrow function -under es 6
+
+6jan2025—content, handson
+
+assignment, tailwind css
+
+ES 6
+
+js
+
+ecma script
+
+arrow function - under es 6
+
+       its from es 6 for efficeincy in term of space and to increase the readability we can create functions without name and is called as arrow function.
+
+document.getElementById(”response”).innerHTML=howareyou();
+
+jsObject.method().property=fuctioncall();
+
+<html>
+<body>
+<h1 id ="response"></h1>
+<h1 id="res"></h>
+</body>
+<script>
+const howru=() => {
+return 100;
+};
+var add=(a,b)=>{return a+b}
+document.getElementByID("response").innerHTML=howru();
+document.getElementById("res").innerHTML = add(100,200);
+</script>
+</html>
+=============================================================================================================================================================
+DAY 2
+
+design a simple calculator by getting 2 num as input display add sum pro quo remain by creating individual arrow func for the same 
+
+
+Create an array by taking array size and elements from the user extract all the perfect numbers and even prime number from the array if not display no such element 
+
+opps-object oriented programing structure
+
+eg. class -bird
+object-peacock, parrot, hen
+property- color size weight legs
+behaviour(methods)-flying singing walking
+
+two component in react 
+functional
+class
+
+
+js object methods
+1 keys
+2 values
+3 entries
+JS PROMISE
+promise is js object --for only while fetching APIs
+2 states of promise
+resolve(success) 
+rejected(failure)
+NOTES:
+invoking a function 
+callback
+
+===================================================================================================================================================
+day 3
+'
+write a promise called Andhra-bp 3 person a,b,c a-reach distance Andhra to a 5000 Andhra to b 2000 Andhra to c 1000 
+
+whre there is more than one Promise in oreder to review them we can use promise inbuild methods according to requirements
+promise.all,any,allsettled,race
+
+promise.all --> once it sees a promise a promise false it will stop 
+promise.any --> give shortest time promise provide status should be true
+promise.allsettled --> will display 1 among these 3 states 1.fulfill 2.rejected 3.pending
+promise.race --> if true it show min time else false show which is false according to first second and third
+
+
+--------------------------------------
+closure
+
+
+--------------------------------------
+react js
+it is library or fame work of js 
+example Netflix amazon
+html websites youtube wikipedia
+react is single page website
+react js -- PATH IN MY SYSTEM C:\Users\GANDHIRAJ J\OneDrive\Desktop\REACT>  -- VERSION  v22.13.0
+cmd   --> node -v for version
+	npm -v
+creating app --> npx create-react-app demoreact
+
+
+1.create a new folder in desktop --  name react
+2.double click the folder go on top address bar type cmd enter
+3.now we are in cmd check the version command 1.node -v
+					      2.npm -v
+4.creatin react app command npx create-react-app demoreact
+5.comment --npm start
+       open your app at port 3000
+to make work 
+1.check app created or not
+2. open app in vs code in cmd comment -- cd demoreact 
+
+2 IMPORTANT FOLDERS IN REACT
+public
+src
+3 IMPORTANT FILES
+index.html
+index.js
+index.css
+note:
+1.as of now don't touch index files
+2.initall do or write the code in app.js
+
+DOM:
+html css js use DOM
+react use or follows VDOM-VIRTUAL DOCUMENT OBJECT MODEL - dom is model or structure
+here unlike html once dom gets created the changes or manipulation what we do gets completed that part will be re-rendered where as in html every time we make change entire dom will be re-rendered
+
+WEB APPLICATION
+in the web application created by react js each and every thing is called as component 
+types of component
+functional component
+class component
+---------------------------------
+jsx
+writing html inside js
+
+
+
+========================================================================================================================================================================================
+
+
+
+DAY -->4
+
+props and states
+every component will have props and states
+props:
+ it wont change eg: brand-name: tata,bisery
+states:
+ it will change or we can change it eg: water level in bottle-- initial state- full , updated state- half , current state- empty
+props  code:
+import React from 'react'
+
+export const Rough = (props) => {
+  return (
+    <div>
+        <p>good morning to all ........{props.name}</p>
+        <h1>hi hello</h1>
+        <h2>have a nice day</h2>
+        <h3>thank you</h3>
+    </div>
+  )
+}
+import logo from './logo.svg';
+import './App.css';
+/*import Dhoni from './about';*/
+import {Rough} from "./rough.js";
+
+function App() {
+  return (
+  <div>
+    
+    <Rough name = "gandhi"/>
+    </div>
+  );  
+}
+
+export default App;
+
+-----------------------
+flipkart website
+components--grocery   mobiles   fashion
+mobiles:
+	component name mobile
+props:
+	name ,version 
+state:
+	discount, stock ,price
+
+
+===================================================================================================================================================================================
+DAY -->5
+React hooks
+Earlier IT industry they use class components - reason state concept was not available with functional components
+Now hooks is used to implement state in functional components
+
+types of hooks
+useState
+useEffect
+usecontext
+useReduce
+useRef
+
+Best Example useState ->>>counter clock , stating the initial state as zero we can increment decrement  reset using hook
+useState - return an array of 2 values initial state and updated state
+
+
+
+
+
+SPREAD OPERATOR
+const arr1 = [1,2,3];
+const arr2 = [1,2,3];
+const cbn= [...arr1,...arr2]; 
+console.log("arr 1:",arr1);
+console.log("arr 2:",arr2);
+console.log("combain:",cbn);
+
+===================================================================================================================================================================================
+DAY 6
+ HOOK
+USEEFFECT
+
+upon the condition or action we apply in our functional components monitoring the impact or side effets can be done using useeffct hook
+
+useeffect access to args
+callback func  - constructor in java
+dependency array - 
+
+import logo from './logo.svg';
+import './App.css';
+import {Rough} from "./rough.js";
+import {Parent} from "./parent.js";
+import {Home} from "./home.js";
+import {Abouts} from './abouts.js';
+import {Contact} from "./contact.js";
+import {BrowserRouter as Router, Route, Routes, Link} from 'react-router-dom';
+function App() {
+  // const persons=[
+  //   {name:'gandhi',age:19},
+  //   {name:'raj',age:19},
+  //   {name:'ragavan',age:19},
+  //   {name:'eishanth',age:19}
+  // ];
+  return (
+    <Router> 
+  <div>
+    {/* {persons.map((persons)=>(
+      <Rough name={persons.name} age={persons.age} />
+    ))} */}
+    <nav>
+      <ul>
+        <li>
+          <Link to="/">Home</Link>
+        </li>
+        <li>
+        <Link to="/abouts">Abouts</Link>
+        </li>
+        <li>
+          <Link to="/contact">Contact</Link>
+        </li>
+      </ul>
+    </nav>
+    <Routes>
+      <Route  path="/home" Component={Home} />
+      <Route  path="/abouts" Component={Abouts} />
+      <Route  path="/contact" Component={Contact} />
+    </Routes>
+    
+    
+    
+     {/* <Parent /> */}
+    {/* <Rough fname = "gandhi"  lname = "raj" age = "19"/> */}
+    {/* <Rough name ="mobile" id ="123"  price ="23456" discount ="12" /> */}
+    </div>
+    </Router>
+  );  
+}
+
+export default App;
+
+
+
+
+======================================================================================
+
+DAY 7  - JAN 20
+five components -
+c1,c2,c3,c4,c5
+c1-hi -> is a props
+
+lets say we have 5 components namely c1 c2 c3 c4 c5 and add and display msg c1 to c2 respectively by keeping c1 as parent and rest all children in order. so c1 child is c2 and c2 child is c3 and so on. every component should display its name as msg as c1 c2……c5 display them from h1 to h5
+
+
+when ever we are using {} it can be js or react component
+
+
+props can be passed between components only by following the hierarchy which means parent to child
+to over come this in terms of efficiency we are using hooks
+conclusion if we want to use state from one component to another component is only way to achieve passing it props in the hierarchy
+this is not efficient to make it efficient we have an exclusive hook called usecontext
+
+
+USE CONTACT HOOKS
+4 component 
+app,js
+container 
+users
+user     
+
+useContext hooks
+without the calling the hierarchy passing stare from one component to another in an efficient way using this hooks
+two important things 
+create context 
+usecontext
+
+in the give example create context will be done in app component and that will be used in user component
+
+synchronization
+
+after a action monitoring or checking the side effects happening in the functional component is possible using useEffect hook
+
+import React from 'react'
+import {useState} from 'react';
+export const Clock = () => {
+    const [count,setCount]=useState(0)
+    const increment=()=>{
+setCount(count+1)
+    }
+    const decrement=()=>{
+        setCount(count-1)
+            }
+  return (
+   
+    <div>
+        <h1>count</h1>
+         <button onclick={increment}>+ </button>
+         <button onclick={decrement}>- </button>
+        <h1>clock</h1>
+        
+    </div>
+  )
+}
+
+
+
+==================================================================================================================================
+DAY 8 JAN 21
+useEffect
+
+SAMPLE PROGRAM 1
+import React,{useState,useEffect} from 'react';
+
+export const UseEffectone = () => {
+    const[starts,update]=useState(0);
+    useEffect(()=>{
+        console.log('the starts value has changed:',starts);},  [starts]);  
+  return (
+    <div>
+             <h1>start :{starts}</h1>
+             <button onClick={()=>update(starts+1)}>+</button>
+             <button onClick={()=>update(starts-1)}>-</button>
+        </div>
+    
+  )
+}
+
+SAMPLE PROGRAM 2
+import React,{useState,useEffect} from 'react';
+
+export const UseEffectone = () => {
+    const[starts,update]=useState(0);
+    useEffect(()=>{
+        document.title=`value ${starts}`;},[starts]);
+  return (
+    <div>
+             <h1>start :{starts}</h1>
+             <button onClick={()=>update(starts+1)}>+</button>
+             <button onClick={()=>update(starts-1)}>-</button>
+        </div>
+    
+  )
+}
+
+
+
+useReducer
+
+same as useStare to manage or update states that i data that is values of components.
+difference is if you have more states or complex things you use useReducer hook
+
+step 1:
+create increment decrement program using  useState
+state 2:
+replace useState with useReducer
+
+note:
+point1:
+useReducer takes 2 arguments --- first is reducerfunction which says what to do (like increment or decrement),
+second is initial value of state
+
+point2:
+useReducer returns array with two values like useState
+
+first is that initial count and second is dispatch function
+we call them as state and dispatch
+
+here state will hold initial value and updated once you call dispatch function and dispatch will trigger useReducer function
+
+
+
+get password as the input if the password is correct display the component login granted  if the password is incorrect access denited
+
+
+
+============================================================================================================================================
+
+DAY 9  JAN 22
+
+redex
+
+create  new redex app
+then install npm i @reduxjs/toolkit react-redux
+then npm i react-router-dom
+  redex store 
+slice -> action -> reducer function
+
+
+router 
+
+router
+routes 
+route
+
+REDUX SETUP
+ step 1:
+creat 2 folder  under src
+1.app for store
+2. slices for slices
+
+
+store - will have states
+slices will have 2 things actions and reducer
+
+sterp 2:
+inside the slices folder create a file called userslice.js
+we can receive data from action.payload
+store.js
+import {configureStore} from '@reduxjs/toolkit';
+import userReducer from '../slices/userslice';
+
+const store=configureStore({
+    reduce:{
+        userinfo:userReducer,
+    }
+});
+export default store;
+
+userslice.js
+import {configureStore} from '@reduxjs/toolkit';
+import userReducer from '../slices/userslice';
+
+const store=configureStore({
+    reduce:{
+        userinfo:userReducer,
+    }
+});
+export default store;
+
+
+now setup is ready then connect with redux  
+in index.js
+import store from './app/store';
+import { Provider } from 'react-redux';
+<Provider store={store}>
+  <App />
+</Provider>
+
+
+useSelector hook - To acces data from redux
+
+
+import React from 'react'
+import {useSelector} from 'react-redux';
+export const Users = () => {
+  const users=useSelector((state)=>state.userinfo.users);
+
+  return (
+    <div>
+      <h1>Users</h1>
+    </div>
+  )
+}
+ explanation:
+
+==================================================================================================================
+DAY 10 JAN 23
+
+
+
+===================================================================================================================
+ DAY 11 MONGODB JAN 24
+we use mongodb as no sql type of data in unstructured json format
+
+
+COMPASS:
+compass helps to fetch data form mongo db server means compass helps you to reach mongo db ..link its client(GUI)
+
+MONGOSH:
+ the mongobd shell was replaced as mongosh 
+the mongodb shell gives you as an interactive environment where you can run quries , mange db, and perform administrative tasks
+
+
+two ter are important
+data modelling:
+nothing but fix strecture of your data planning the structure
+eg: name id password
+schema:
+actual blue print or strecture of your data
+which we created by fixing the component using data modelling
+
+NO SQL
+
+SQL - RECORD
+MONGO - DOCUMENT
+SQL- TABLE
+MONGO-COLLECTIONS
+
+COLLECTIONS ARE STORED IN DB
+
+MONGO WILL HAVE MULTIPLE DB
+
+
+step 1:
+DOWNLOAD MONGODB COMPASS AFTER INSTALL CLICK ON VARIABLE  COMPASS
+MONGOSH MSI
+
+my mongosh path--->C:\Users\GANDHIRAJ J\AppData\Local\Programs\mongosh\
+
+db name-in command prompt after when mongosh is running prompt
+ to create a data base name
+test> use dbaiml
+switched to db dbaiml
+dbaiml>
+
+
+
+
+
+
+
+
+copy connection string  
+
+
+mongodb://localhost:27017/
+
+
+
+
+
+
+
+
+
+
+
+FOR REFERST TO SEE SIGLE CHANE IN COMPASS CTRL+SHIFT+R
+
+------------------------------------
+database ready
+test> use dbaiml
+switched to db dbaiml
+dbaiml> use empdetails   ----->database name
+switched to db empdetails
+empdetails> show dbs
+admin        40.00 KiB
+config      108.00 KiB
+empdetails    8.00 KiB
+local        40.00 KiB
+empdetails> db.emp    ----->collection name
+empdetails.emp
+empdetails> db.emp.insertOne({empname:"gandhi"})    ---------->insert employee
+{
+  acknowledged: true,
+  insertedId: ObjectId('67932c51079f3f51decb0ce2')
+}
+empdetails> db.emp.insertOne({empage:"18"})
+{
+  acknowledged: true,
+  insertedId: ObjectId('67932d0e079f3f51decb0ce3')
+
+empdetails> db.emp.find({empname:"gandhi"})   --------->find 
+}
+
+empdetails> db.emp.insertMany([
+... {empname: "aaa", age:23 ,dept:"marketing"},
+... {empname: "bbb", age:25 ,dept:"hr"},
+... {empname: "ccc", age:24 ,dept:"hr"}])
+{
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId('67933197079f3f51decb0ce7'),
+    '1': ObjectId('67933197079f3f51decb0ce8'),
+    '2': ObjectId('67933197079f3f51decb0ce9')
+  }
+} --------------------------------------------------->insert manydb.my
+
+ EMBEDDED OBJECT INSIDE OBJECT
+empdetails> db.emp.insertOne({empname:"ram",age:22,dept:"Marketing",personal
+:{phone:9087677856,pin:604404}})
+{
+  acknowledged: true,
+  insertedId: ObjectId('67933094079f3f51decb0ce6')
+}
+empdetails>
+
+empdetails> db.emp.updateOne({empname:"ccc"},{$set:{age:55}})------>update one
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+empdetails> db.emp.updateMany({age:30},{$set:{status:"Active"}})----------->update many
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 0,
+  modifiedCount: 0,
+  upsertedCount: 0
+}
+empdetails>
+
+
+
+
+ create a db name computers collections name laptop
+name,model,color,status,price  vendor,vnmae,vprice
+1.listout particular model lap
+change its status vice versa
+
+
+==========================================================================================================================================
+DAY 12  JAN 25
+updateOne - does not modify the field is the same value is given
+
+filter all records with price range 30k to 50k and go with del and add field called shipping 
+
+
+$ and,or,gt,lt
+db.products.find({$and:[{price:{$gt:80000},{brand:"apple}]})
+
+
+db.products.find({$and:[{price:{$lt:80000},{brand:"apple}]})
+
+
+db.customeers.find({$and:[{hobbis:{$exists:false}},{age:{$gt:40}}]})
+
+
+aggregation is group by
+db.companies.aggregate([{$loolup:{from:"employees",loaclfield:"_id",foreignfield:"company_id,as:"employee}}])
+
+
+create a database create two db under that first customerpersonal second customerAccount  data mode 1. name(string),address[array],phone(object with 2 phonenumber 1,2),age  2. accno(int) branch(string) bankname[string]  ifsc no[int] currentbalance[float]  accounttype[saving/current] over draft[yes/no]
+1.filter od category yes 
+2.display customer address where branch name are same
+3.current balance 10-20000  filter only phone number
+4.filter only savings account people complete
+ details
+5.add field status same[ifsc - code]
+
+===========================================================================================================================================
+DAY 13   JAN 26
+BACKEND----------
+NODE is a backend library 
+
+
+nodema to run the server easily like auto save
+
+npm i express
+
+it is popular js library or we call it as run time environment along with js in server side
+
+maintain split terminal (2) in order to use client and server
+RUN COMMAND:
+alway start the server first 
+command ---> node server.js
+
+COMMAND TO RUN CLIENT:
+npm start
+
+
+npm i express
+ we can delete package.json to get it back   npm init -y
+
+
+axios it is a popular js library used to make https request from browser to client
+it is known easy and clean syntax also flexibility espically works well with api and rest api 
+when we write ap for exclusive purpose is rest api
+cors:  
+expansion cross origin resource sharing
+
+when a webpage request  information from resource [from any other sites ] whether to accept the request and process it or not will be defined by the rule book for this purpose we use cors
+
+comments npm i axios
+npm i cors
+npm i express cors
+
+
+
+
+
+
+in the given example we requesting data from server data:  hello this data form server
+if the datacomponent.js as cilient using http get methode via api/data 
+server response  json 
+from the json file i want to filter only the message so we are using cors response.message
+                   
+==========================================================================================================================================================
+DAY 14   JAN 27
+
+			FETCHING THE DATA FROM SERVER TO CLIENT
+server.js
+const express=require('express');//require is the keyword from node js,express is the library from javascript
+const cors= require('cors');//import the custom module
+
+const app=express();
+const port=3000;//define the port number the server will listen on
+//middleware
+app.use(cors());
+app.use(express.json());
+
+app.get('/api/data',(req,res)=>{
+    
+    res.json({message:'Hello,this is a data from the server!'});
+});
+
+app.listen(port,()=> {
+    //log message indicating the serve is running and provide the URL to access it
+    console.log(`Server is running at http://localhost:${port}`);
+});
+
+
+app.js
+
+import logo from './logo.svg';
+import './App.css';
+import Datacomponent from './datacomponent';
+
+function App() {
+  return (
+    <div className="App">
+     <Datacomponent />
+    </div>
+  );
+}
+
+export default App;
+
+datacomponent.js ------------>client
+import React, {useState,useEffect} from 'react';
+import axios from 'axios';
+const Datacomponent = () =>{
+    const [data,setdata] = useState('');
+    useEffect(()=>{
+        axios.get('http://localhost:3000/api/data')
+        .then(response => setdata(response.data.message))
+        .catch(error => console.error('error fetching data:',error));
+    },[]);
+    return(
+        <div>
+            <h1> Data from server</h1>
+                <p>
+                    {data}</p>
+        </div>
+    )
+};
+export default Datacomponent;
+
+
+
+
+=================================================================================================================================================
+
+DAY 15
+JAN - 28
+
+
+user
+createuser
+updateuser
+
+in app.js route those 3
+
+create a folder server
+npm init
+
+index.js which is inside sever.js write backend code 
+
+   
